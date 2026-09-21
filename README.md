@@ -22,8 +22,18 @@ Streamlit opens at <http://localhost:8501>. It includes the overview, channel mi
 
 ## Deploy
 
-- **Streamlit Community Cloud:** push this folder to GitHub, choose `streamlit_app.py` as the main file, and use `requirements.txt`.
+- **Streamlit Community Cloud:** push this folder to GitHub, choose `streamlit_app.py` as the main file, and use `requirements.txt`. Do not choose `app.py`: that file is the FastAPI API and will produce a Streamlit health-check 404.
 - **Render/Railway:** use the `Procfile` command for a Streamlit web service.
+
+### Streamlit Cloud 404 fix
+
+In the Streamlit deployment settings, set **Main file path** to:
+
+```text
+streamlit_app.py
+```
+
+Then redeploy or reboot the app. The log should reference `streamlit_app.py`, not `app.py`.
 
 ## API surface
 
