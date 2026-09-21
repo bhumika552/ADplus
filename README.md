@@ -23,7 +23,15 @@ Streamlit opens at <http://localhost:8501>. It includes the overview, channel mi
 ## Deploy
 
 - **Streamlit Community Cloud:** push this folder to GitHub, choose `streamlit_app.py` as the main file, and use `requirements.txt`. Do not choose `app.py`: that file is the FastAPI API and will produce a Streamlit health-check 404.
-- **Render/Railway:** use the `Procfile` command for a Streamlit web service.
+- **Render:** use the included `render.yaml` blueprint. It runs `streamlit_app.py`, binds to Render's `$PORT`, and checks `/_stcore/health`.
+- **Railway:** create a Python service from this repo and use the `Procfile` command for a Streamlit web service.
+
+### Deploy on Render
+
+1. Open <https://dashboard.render.com> and choose **New + → Blueprint**.
+2. Connect `bhumika552/ADplus` and select the `master` branch.
+3. Render reads `render.yaml` and creates the `adpulse` web service.
+4. After the first deploy, open the generated `onrender.com` URL.
 
 ### Streamlit Cloud 404 fix
 
