@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AdPulse marketing performance and budget intelligence dashboard">
+  <title>AdPulse / Marketing Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark"><i></i><i></i><i></i></span><span>adpulse</span></div>
+      <div class="workspace-switcher"><span class="workspace-dot"></span><span id="workspace-name-label">Northstar Labs</span><i data-lucide="chevrons-up-down"></i></div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <p class="nav-label">Workspace</p>
+        <button class="nav-item active" data-view="overview"><i data-lucide="layout-dashboard"></i>Overview</button>
+        <button class="nav-item" data-view="campaigns"><i data-lucide="crosshair"></i>Campaign intelligence</button>
+        <button class="nav-item" data-view="channels"><i data-lucide="layers-3"></i>Channel mix</button>
+        <button class="nav-item" data-view="funnel"><i data-lucide="filter"></i>Customer funnel</button>
+        <p class="nav-label nav-spacer">Decisions</p>
+        <button class="nav-item" data-view="simulator"><i data-lucide="sliders-horizontal"></i>Budget simulator<span class="nav-badge">BETA</span></button>
+        <button class="nav-item" data-view="analyst"><i data-lucide="sparkles"></i>AI analyst</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="model-status"><span class="pulse-dot"></span><div><strong id="api-status">Models online</strong><small>Analytics API ready</small></div></div>
+        <button class="nav-item" id="settings-button"><i data-lucide="settings-2"></i>Workspace settings</button>
+        <div class="user-card"><div class="avatar">AS</div><div><strong>Arjun Sharma</strong><small>Admin</small></div><i data-lucide="more-horizontal"></i></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar"><div class="breadcrumbs"><span>Workspace</span><i data-lucide="chevron-right"></i><strong id="page-title">Overview</strong></div><div class="topbar-actions"><button class="icon-button" aria-label="Notifications"><i data-lucide="bell"></i><span class="notification-dot"></span></button><button class="date-picker"><i data-lucide="calendar-days"></i>01 Aug – 31 Aug 2024<i data-lucide="chevron-down"></i></button><button class="export-button"><i data-lucide="download"></i>Export report</button></div></header>
+
+      <div class="page-body" id="view-overview">
+        <section class="page-intro"><div><p class="eyebrow">Monday, 02 September 2024 <span class="live-dot"></span> Live view</p><h1>Good morning, Arjun<span class="accent">.</span></h1><p class="intro-copy">Your marketing engine is producing <strong>18% more return</strong> than last month. Here’s where the next rupee should go.</p></div><div class="intro-actions"><button class="ghost-button"><i data-lucide="share-2"></i>Share view</button><button class="primary-button" data-jump="simulator"><i data-lucide="wand-sparkles"></i>Optimize budget</button></div></section>
+        <section class="metric-grid">
+          <article class="metric-card"><div class="metric-head"><span>Total spend</span><i data-lucide="wallet-cards"></i></div><div class="metric-value" id="metric-spend">₹10.0L</div><div class="metric-footer"><span class="trend positive">↗ 12.4%</span><span>vs. previous period</span></div></article>
+          <article class="metric-card accent-card"><div class="metric-head"><span>Attributed revenue</span><i data-lucide="banknote-arrow-up"></i></div><div class="metric-value" id="metric-revenue">₹23.3L</div><div class="metric-footer"><span class="trend positive">↗ 18.1%</span><span>vs. previous period</span></div></article>
+          <article class="metric-card"><div class="metric-head"><span>Blended ROAS</span><i data-lucide="chart-no-axes-combined"></i></div><div class="metric-value" id="metric-roas">2.33<span class="unit">x</span></div><div class="metric-footer"><span class="trend positive">↗ 0.31x</span><span>vs. previous period</span></div></article>
+          <article class="metric-card"><div class="metric-head"><span>New customers</span><i data-lucide="users-round"></i></div><div class="metric-value" id="metric-customers">181</div><div class="metric-footer"><span class="trend negative">↘ 3.2%</span><span>vs. previous period</span></div></article>
+        </section>
+
+        <section class="dashboard-grid main-row"><article class="panel performance-panel"><div class="panel-header"><div><h2>Performance overview</h2><p>Revenue and spend across the selected period</p></div><div class="segmented"><button class="active">Revenue</button><button>Spend</button><button>ROAS</button></div></div><div class="chart-wrap"><div class="y-axis"><span>₹3L</span><span>₹2L</span><span>₹1L</span><span>₹0</span></div><div class="chart-area"><div class="grid-lines"><span></span><span></span><span></span><span></span></div><svg class="line-chart" viewBox="0 0 720 260" preserveAspectRatio="none" aria-label="Revenue trend chart"><defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#d7ff62" stop-opacity=".25"/><stop offset="100%" stop-color="#d7ff62" stop-opacity="0"/></linearGradient></defs><path class="area" d="M0,213 C30,208 53,177 83,185 S134,146 166,156 S216,100 249,124 S300,118 332,94 S385,112 416,70 S462,89 498,59 S550,68 582,36 S632,64 665,31 S704,47 720,18 L720,260 L0,260Z"/><path class="revenue-line" d="M0,213 C30,208 53,177 83,185 S134,146 166,156 S216,100 249,124 S300,118 332,94 S385,112 416,70 S462,89 498,59 S550,68 582,36 S632,64 665,31 S704,47 720,18"/><path class="spend-line" d="M0,236 C42,232 63,220 104,224 S156,210 197,214 S248,188 286,201 S343,177 381,190 S434,164 470,173 S526,149 567,159 S626,138 662,145 S701,128 720,130"/></svg><div class="chart-x"><span>01 Aug</span><span>08 Aug</span><span>15 Aug</span><span>22 Aug</span><span>31 Aug</span></div></div></div><div class="chart-legend"><span><i class="legend-dot revenue"></i>Revenue</span><span><i class="legend-dot spend"></i>Spend</span><span class="chart-callout"><b>₹1.08L</b> avg. daily revenue</span></div></article><article class="panel recommendation-panel"><div class="panel-header"><div><span class="mini-label"><i data-lucide="sparkles"></i> Pulse recommendation</span><h2>Shift ₹60k to YouTube</h2></div><button class="more-button" aria-label="More options"><i data-lucide="more-horizontal"></i></button></div><p class="recommendation-copy">YouTube is showing the strongest marginal return. Moving budget from LinkedIn could generate an estimated <strong>₹1.15L incremental revenue</strong> this month.</p><div class="recommendation-visual"><div class="allocation-row"><span>Current mix</span><span>Optimized mix</span></div><div class="allocation-bar current"><span style="width:40%"></span><span style="width:30%"></span><span style="width:20%"></span><span style="width:10%"></span></div><div class="allocation-bar optimized"><span style="width:35%"></span><span style="width:25%"></span><span style="width:30%"></span><span style="width:10%"></span></div><div class="allocation-legend"><span><i class="google"></i>Google</span><span><i class="meta"></i>Meta</span><span><i class="youtube"></i>YouTube</span><span><i class="linkedin"></i>LinkedIn</span></div></div><div class="recommendation-bottom"><div><small>Projected ROAS</small><strong>2.71x <span>+13.4%</span></strong></div><button class="text-button" data-jump="simulator">Explore scenario <i data-lucide="arrow-up-right"></i></button></div></article></section>
+
+        <section class="dashboard-grid lower-row"><article class="panel table-panel"><div class="panel-header"><div><h2>Channel performance</h2><p>Efficiency by acquisition channel</p></div><button class="text-button" data-jump="channels">View all <i data-lucide="arrow-right"></i></button></div><div class="table-wrap"><table><thead><tr><th>Channel</th><th>Spend</th><th>Revenue</th><th>ROAS</th><th>Trend</th><th></th></tr></thead><tbody><tr data-channel="Google Ads"><td><span class="channel-icon google">G</span><strong>Google Ads</strong></td><td class="channel-spend">₹4.0L</td><td class="channel-revenue">₹11.0L</td><td><b class="channel-roas">2.75x</b></td><td><span class="sparkline green">⌁⌁⌁</span></td><td><i data-lucide="arrow-up-right"></i></td></tr><tr data-channel="Meta Ads"><td><span class="channel-icon meta">M</span><strong>Meta Ads</strong></td><td class="channel-spend">₹3.0L</td><td class="channel-revenue">₹6.0L</td><td><b class="channel-roas">2.00x</b></td><td><span class="sparkline yellow">⌁⌁⌁</span></td><td><i data-lucide="arrow-up-right"></i></td></tr><tr data-channel="YouTube"><td><span class="channel-icon youtube">Y</span><strong>YouTube</strong></td><td class="channel-spend">₹1.0L</td><td class="channel-revenue">₹3.5L</td><td><b class="channel-roas">3.50x</b></td><td><span class="sparkline green">⌁⌁⌁</span></td><td><i data-lucide="arrow-up-right"></i></td></tr><tr data-channel="LinkedIn"><td><span class="channel-icon linkedin">in</span><strong>LinkedIn</strong></td><td class="channel-spend">₹2.0L</td><td class="channel-revenue">₹2.8L</td><td><b class="channel-roas">1.40x</b></td><td><span class="sparkline red">⌁⌁⌁</span></td><td><i data-lucide="arrow-up-right"></i></td></tr></tbody></table></div></article><article class="panel activity-panel"><div class="panel-header"><div><h2>Signals worth knowing</h2><p>Detected in the last 24 hours</p></div><span class="signal-count">04</span></div><div class="signal-list"><div class="signal"><span class="signal-icon lime"><i data-lucide="trending-up"></i></span><div><strong>YouTube efficiency improved</strong><p>ROAS increased 24% after creative refresh.</p><small>2h ago</small></div></div><div class="signal"><span class="signal-icon amber"><i data-lucide="triangle-alert"></i></span><div><strong>Meta CPC is climbing</strong><p>Up 21% week-over-week in broad audiences.</p><small>5h ago</small></div></div><div class="signal"><span class="signal-icon coral"><i data-lucide="scan-search"></i></span><div><strong>Campaign 27 is an outlier</strong><p>18% higher CVR than account average.</p><small>Yesterday</small></div></div></div></article></section>
+      </div>
+
+      <div class="module-view" id="view-placeholder" hidden><div id="module-content"></div></div>
+    </main>
+  </div>
+  <div class="settings-backdrop" id="settings-backdrop" hidden></div>
+  <aside class="settings-drawer" id="settings-drawer" aria-label="Workspace settings" hidden>
+    <div class="settings-drawer-header"><div><p class="eyebrow">Workspace / Settings</p><h2>Workspace settings</h2></div><button class="icon-button" id="settings-close" aria-label="Close settings"><i data-lucide="x"></i></button></div>
+    <form id="settings-form" class="settings-form">
+      <label>Workspace name<input id="workspace-name" type="text" value="Northstar Labs" maxlength="40"></label>
+      <label>Reporting currency<select id="workspace-currency"><option value="INR">INR / ₹</option><option value="USD">USD / $</option><option value="GBP">GBP / £</option></select></label>
+      <label>Attribution model<select id="attribution-model"><option>Last touch</option><option>First touch</option><option>Linear</option><option>Position based</option><option>Time decay</option></select></label>
+      <div class="settings-divider"></div><div class="settings-status"><span class="pulse-dot"></span><div><strong>Analytics engine online</strong><small>FastAPI · deterministic model · v0.1.0</small></div></div>
+      <button class="primary-button" type="submit"><i data-lucide="save"></i>Save settings</button><p class="settings-saved" id="settings-saved" hidden>Settings saved for this browser.</p>
+    </form>
+  </aside>
+  <script src="app.js?v=4"></script>
+</body>
+</html>
